@@ -1,14 +1,24 @@
 import { alpha, styled } from '@mui/material/styles';
-import { Stack, AppBar, Toolbar } from '@mui/material';
+import { Stack, AppBar, Toolbar, IconButton } from '@mui/material';
+import MHidden from './shared/MHidden';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const DRAWER_WIDTH = 280;
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;
 
-const Navbar = () => {
+const NavBar = ({ onOpenSidebar }) => {
   return (
     <Root>
       <ToolbarStyle>
+        <MHidden width='lgUp'>
+          <IconButton
+            onClick={onOpenSidebar}
+            sx={{ mr: 1, color: 'text.primary' }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </MHidden>
         <Stack
           direction='row'
           alignItems='center'
@@ -23,7 +33,7 @@ const Navbar = () => {
   );
 };
 
-const Root = styled('AppBar')(({ theme }) => ({
+const Root = styled(AppBar)(({ theme }) => ({
   boxShadow: 'none',
   backdropFilter: 'blur(6px)',
   WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
@@ -41,4 +51,4 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   },
 }));
 
-export default Navbar;
+export default NavBar;

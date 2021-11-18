@@ -1,11 +1,17 @@
-import Layout from './components/Layout';
+// routes
+import Router from './routes';
+// theme
+import ThemeConfig from './theme/Theme';
 import './App.css';
 
 function App() {
   return (
-    <div className='App'>
-      <Layout />
-    </div>
+    <ThemeConfig>
+      {/* <ScrollToTop /> */}
+      {/* <GlobalStyles /> */}
+      {/* <BaseOptionChartStyle /> */}
+      <Router />
+    </ThemeConfig>
   );
 }
 

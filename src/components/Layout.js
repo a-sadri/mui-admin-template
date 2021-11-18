@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import Sidebar from './Sidebar';
 import Content from './Content';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ const Layout = () => {
 
   return (
     <Root>
-      <Navbar onOpenSidebar={() => setOpen(true)} />
+      <NavBar onOpenSidebar={() => setOpen(true)} />
       {/* <DashboardSidebar
         isOpenSidebar={open}
         onCloseSidebar={() => setOpen(false)}
